@@ -20,8 +20,8 @@ public class Locators {
 
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
         driver.get("https://rahulshettyacademy.com/locatorspractice/");
+
         driver.findElement(By.id("inputUsername")).sendKeys("dimitri");
         driver.findElement(By.name("inputPassword")).sendKeys("abc123");
         driver.findElement(By.className("signInBtn")).click();
@@ -44,7 +44,6 @@ public class Locators {
         driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");
         driver.findElement(By.id("chkboxOne")).click();
         driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();
-
 
 //        driver.quit();
     }
