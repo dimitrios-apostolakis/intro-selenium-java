@@ -31,7 +31,7 @@ public class UpdatedDropdown {
 
         driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+        driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
 
 
 
