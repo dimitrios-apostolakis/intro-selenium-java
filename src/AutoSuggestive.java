@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 
 import java.awt.*;
 import java.util.Arrays;
@@ -28,9 +29,12 @@ public class AutoSuggestive {
                 break;
             }
         }
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
         driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
-        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        Assert.assertTrue(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
         List<WebElement> optionsCheckboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        System.out.println(optionsCheckboxes.size());
+        Assert.assertEquals(optionsCheckboxes.size(),6);
+
+        driver.quit();
     }
 }
