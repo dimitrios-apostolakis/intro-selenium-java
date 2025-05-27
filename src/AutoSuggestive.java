@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.List;
 
 public class AutoSuggestive {
@@ -27,5 +28,9 @@ public class AutoSuggestive {
                 break;
             }
         }
+        driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).click();
+        System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());
+        List<WebElement> optionsCheckboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
+        System.out.println(optionsCheckboxes.size());
     }
 }
