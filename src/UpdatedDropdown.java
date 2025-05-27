@@ -24,6 +24,17 @@ public class UpdatedDropdown {
         }
         driver.findElement(By.id("btnclosepaxoption")).click();
         System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+
+        driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("//a[@value='BLR']")).click();
+
+        driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("(//a[@value='MAA'])[2]")).click();
+
+
+
         driver.quit();
     }
 }
