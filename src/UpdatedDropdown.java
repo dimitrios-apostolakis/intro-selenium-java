@@ -2,8 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 
 import java.awt.*;
+import java.util.Objects;
 
 public class UpdatedDropdown {
 
@@ -32,6 +34,12 @@ public class UpdatedDropdown {
         driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXT")).click();
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
+        driver.findElement(By.cssSelector(".ui-state-default.ui-state-active")).click();
+
+
+        Assert.assertTrue(Objects.requireNonNull(driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style")).contains("0.5"));
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+        Assert.assertTrue(Objects.requireNonNull(driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style")).contains("1"));
 
 
 
