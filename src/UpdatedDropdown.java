@@ -41,8 +41,10 @@ public class UpdatedDropdown {
         driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
         Assert.assertTrue(Objects.requireNonNull(driver.findElement(By.cssSelector("#Div1")).getDomAttribute("style")).contains("1"));
 
+        driver.findElement(By.id("ctl00_mainContent_btn_FindFlights")).click();
 
 
-        driver.quit();
+
+//        driver.quit();
     }
 }
