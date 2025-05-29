@@ -1,20 +1,14 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
-import java.awt.*;
 import java.util.Objects;
 
 public class UpdatedDropdown {
 
     public static void main(String[] args) throws InterruptedException {
-        Point location = MouseInfo.getPointerInfo().getLocation();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--window-position=" + location.x + "," + (location.y -= 400));
-
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(BrowserUtils.getPositionedChromeOptions(500));
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
         System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
         driver.findElement(By.id("divpaxinfo")).click();
